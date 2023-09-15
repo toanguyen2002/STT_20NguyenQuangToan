@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="game">
+        <h1>Guess My Number!</h1>
+        <p class="message">Start guessing...</p>
+        <input type="number" class="numberInput">
+        <input type="hidden" class="randomInput">
+        <div class="error" style="color: red;"></div>
+        <button class="check">Check!</button>
+        <button class="again">Again</button>
+        <Br></Br>
+        <div style="display: inline-block;">
+            <p>Score</p>
+            <p class="score" value="0"></p>
+        </div>
+    </div>
+
+
+    <div class="images">
+
+    </div>
+
+    <div class="imagess">
+
+    </div>
+</body>
+<script>
+    console.log('-------------Coding Challenge #1==================================');
+    BMI = (mass, height) => {
+        console.log(mass / (height * height));
+    }
+    console.log('Data 1')
+    var Marksweight1 = BMI(78, 1.69)
+    var Johnweights1 = BMI(92, 1.76)
+
+
+    console.log('Data 2')
+    var StoreMarks2 = BMI(95, 1.88)
+    var Johnweights2 = BMI(85, 1.76)
+
+    const John = {
+        name: 'John',
+        BMI: Johnweights1
+    }
+
+    const Mark = {
+        name: 'Mark',
+        BMI: Marksweight1
+    }
+    console.log('-------------Coding Challenge #2==================================');
+    const checkBMI = (user1, user2) => {
+        if (user1.BMI > user2.BMI)
+            console.log("" + user1.name + " BMI is higher than " + user2.name + "!")
+        else
+            console.log("" + user2.name + " BMI is higher than " + user1.name + "!")
+    }
+
+    checkBMI(John, Mark)
+    console.log('-------------Coding Challenge #3==================================');
+    console.log('Data 1');
+
+    var Dolphins = [96, 108, 89]
+    var Koalas = [88, 91, 110]
+
+    var Dolphinsteam1 = Dolphins.
+        map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / Dolphins.length
+    var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
+        num + cal, 0)) / Koalas.length
+    DolphinsTeam = {
+        name: 'Dolphins',
+        score: Dolphinsteam1
+    }
+    KoalasTeam = {
+        name: 'Koalas',
+        score: Koalasteam1
+    }
+    checkWinnerTeam = (team1, team2) => {
+        if (team1.score > team2.score) {
+            console.log("" + team1.name + " Win  with " + team1.score);
+        } else
+            console.log("" + team2.name + " Win with " + team2.score);
+    }
+    checkWinnerTeam(DolphinsTeam, KoalasTeam)
+
+    console.log('==================================Bonus 1==================================');
+    var Dolphins = [97, 112, 101]
+    var Koalas = [109, 95, 123]
+
+    var Dolphinsteam1 = Dolphins.
+        map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / Dolphins.length
+    var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
+        num + cal, 0)) / Koalas.length
+    DolphinsTeam = {
+        name: 'Dolphins',
+        score: Dolphinsteam1
+    }
+    KoalasTeam = {
+        name: 'Koalas',
+        score: Koalasteam1
+    }
+    checkWinnerTeamBonus1 = (team1, team2) => {
+        if (team1.score > 100 && team2.score < 100) {
+            console.log("" + team1.name + " Win  with " + team1.score)
+        }
+        if (team1.score < 100 && team2.score > 100) {
+            console.log("" + team2.name + " Win  with " + team2.score)
+        }
+        if (team1.score > 100 && team2.score > 100) {
+            if (team1.score > team2.score) {
+                console.log("" + team1.name + " Win  with " + team1.score)
+            } else if (team1.score === team2.score) {
+
+            } else {
+                console.log("" + team2.name + " Win  with " + team2.score)
+            }
+        }
+        if (team1.score < 100 && team2.score < 100) {
+            console.log("no team win")
+        }
+    }
+    checkWinnerTeamBonus1(DolphinsTeam, KoalasTeam)
+
+    console.log('==================================Bonus 2==================================');
+    var Dolphins = [97, 112, 101]
+    var Koalas = [109, 95, 106]
+
+    var Dolphinsteam1 = Dolphins.
+        map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / Dolphins.length
+    var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
+        num + cal, 0)) / Koalas.length
+    DolphinsTeam = {
+        name: 'Dolphins',
+        score: Dolphinsteam1
+    }
+    KoalasTeam = {
+        name: 'Koalas',
+        score: Koalasteam1
+    }
+    checkWinnerTeamBonus2 = (team1, team2) => {
+        // console.log('checkbonus2')
+        // console.log(team1.score)
+        // console.log(team2.score)
+        if (team1.score > 100 && team2.score < 100) {
+            console.log("" + team1.name + " Win  with " + team1.score)
+        }
+        if (team1.score < 100 && team2.score > 100) {
+            console.log("" + team2.name + " Win  with " + team2.score)
+        }
+        if (team1.score > 100 && team2.score > 100) {
+            if (team1.score > team2.score) {
+                console.log("" + team1.name + " Win  with " + team1.score)
+            } else if (team1.score === team2.score) {
+                console.log(team1.name + " draw " + team2.name)
+            } else {
+                console.log("" + team2.name + " Win  with " + team2.score)
+            }
+        }
+        if (team1.score < 100 && team2.score < 100) {
+            console.log("no team win")
+        }
+    }
+    checkWinnerTeamBonus2(DolphinsTeam, KoalasTeam)
+
+    console.log('-------------Coding Challenge #4==================================');
+
+
+    const Tipcalculator = (billnum) => {
+        if (billnum => 30 && billnum <= 50) {
+            return billnum * 15 / 100;
+        } else {
+            return billnum * 20 / 100;
+        }
+    }
+
+    billnum = [275, 40, 430]
+
+    billnum.map(element => {
+        console.log("The bill was " + element + ", the tip was 41.25" + Tipcalculator(element))
+    });
+
+
+    console.log('-------------Coding Challenge #5==================================');
+    console.log('-------------DATA 1==================================');
+    var Dolphins = [44, 23, 71]
+    var Koalas = [65, 54, 49]
+    var calcAverage = (ScoreTeam) => {
+        return ScoreTeam.map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / ScoreTeam.length
+    }
+    var avgDolhins = calcAverage(Dolphins)
+    console.log('Dolhin score ' + avgDolhins);
+
+    var avgKoalas = calcAverage(Koalas)
+    console.log('Koalas score ' + avgKoalas);
+    var Dolhins = {
+        name: 'Dolhins',
+        avgScore: avgDolhins
+    }
+    var Koalas = {
+        name: 'Koalas',
+        avgScore: avgKoalas
+    }
+    const checkWinner = (team1, team2) => {
+        if (team1.avgScore > team2.avgScore) {
+            console.log(team1.name + ' Win (' + team1.avgScore + ' vs. ' + team2.avgScore + ')')
+        } else if (team1.avgScore === team2.avgScore) {
+            console.log(team1.name + ' Draw ' + team2.name + '(' + team2.avgScore + ' vs. ' + team1.avgScore + ')')
+        } else {
+            console.log(team2.name + ' Win (' + team2.avgScore + ' vs. ' + team1.avgScore + ')')
+        }
+    }
+    checkWinner(Dolhins, Koalas)
+
+    console.log('-------------DATA 2==================================');
+
+    Dolphins = [85, 54, 41]
+    Koalas = [23, 34, 27]
+
+
+    var avgDolhins = calcAverage(Dolphins)
+    console.log('Dolhin score ' + avgDolhins);
+
+    var avgKoalas = calcAverage(Koalas)
+    console.log('Koalas score ' + avgKoalas);
+
+    var Dolhins = {
+        name: 'Dolhins',
+        avgScore: avgDolhins
+    }
+    var Koalas = {
+        name: 'Koalas',
+        avgScore: avgKoalas
+    }
+
+    checkWinner(Dolhins, Koalas)
+
+    console.log('-------------Coding Challenge #6==================================');
+
+    const calcTip = (bill) => {
+        if (bill => 50 && bill <= 300) {
+            return bill * 15 / 100;
+        } else {
+            return bill * 20 / 100;
+        }
+    }
+    bills = [125, 555, 44]
+    tips = []
+    bills.map((bill) => {
+        tips.push(calcTip(bill))
+    })
+    console.log(tips);
+    console.log('-------------Coding Challenge #7==================================');
+
+
+    var MarkMiller = {
+        name: 'Mark',
+        mass: 78,
+        height: 1.69
+
+    }
+
+    var JohnSmith = {
+        name: 'Mark',
+        mass: 92,
+        height: 1.95
+
+    }
+
+    const calcBMI = (object) => {
+        return object.mass /
+            (object.height * object.height)
+
+    }
+    console.log(calcBMI(MarkMiller));
+    console.log(calcBMI(JohnSmith));
+
+    if (calcBMI(MarkMiller) < calcBMI(JohnSmith)) {
+        console.log('Johns BMI ' + calcBMI(JohnSmith) + ' is higher than Marks ' + calcBMI(MarkMiller) + '!')
+    } else {
+        console.log('Johns BMI ' + calcBMI(JohnSmith) + ' is lower than Marks ' + calcBMI(MarkMiller) + '!')
+    }
+
+    console.log('-------------Coding Challenge #8==================================');
+    bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+    tips = []
+    Totals = []
+    bills.map((bill) => {
+        tips.push(calcTip(bill))
+        Totals.push(calcTip(bill) + bill)
+    })
+    console.log(tips);
+    console.log(Totals);
+    console.log('-------------Coding Challenge #8 BONUS==================================');
+    var sum
+    var calcAverage = (arr) => {
+        sum = arr.reduce((cacl, value) => cacl + value, 0)
+        return sum
+    }
+    console.log('CACL AVG: ' + calcAverage(Totals) / Totals.length);
+
+    console.log('-------------Coding Challenge #9 ==================================');
+
+
+    Data1 = [17, 21, 23]
+    Data2 = [12, 5, -5, 0, 4]
+
+    var printForecast = (arr) => {
+        arr.map((item, index) => {
+            console.log(item + 'oC in ' + (index + 1) + ' days');
+        })
+    }
+    printForecast(Data1)
+    printForecast(Data2)
+    console.log('-------------Coding Challenge #10 ==================================');
+
+
+    const message = document.querySelector('.message');
+    const numberInput = document.querySelector('.numberInput');
+    const scoreDisplay = document.querySelector('.score');
+    const numberDisplay = document.querySelector('.number');
+    const again = document.querySelector('.again');
+    const randomInput = document.querySelector('.randomInput');
+    const check = document.querySelector('.check');
+    const error = document.querySelector('.error');
+    var score = 0
+    randomInput.value = Math.floor(Math.random() * 101);
+    console.log(randomInput.value)
+
+
+    again.addEventListener('click', () => {
+        randomInput.value = Math.floor(Math.random() * 101);
+        console.log(randomInput.value)
+    })
+    check.addEventListener('click', () => {
+
+        if (numberInput.value === randomInput.value) {
+            console.log(1)
+            score += 10
+            scoreDisplay.innerHTML = score
+            randomInput.value = Math.floor(Math.random() * 101);
+            numberInput.value = ''
+            console.log(randomInput.value)
+        } else {
+            error.innerHTML = "Play again"
+            score = 0
+            numberInput.value = ''
+            scoreDisplay.innerHTML = score
+        }
+    })
+
+
+    console.log('==================================Data Structures, Modern Operators and Strings==================================');
+    console.log('==================================Coding Challenge #1==================================');
+
+    game = {
+        "teams": [{
+            "name": "Bayern Munich",
+            "players": [
+                "Neuer",
+                "Davies",
+                "Lucas Hernandez",
+                "Upamecano",
+                "Kimmich",
+                "Goretzka",
+                "Muller",
+                "Gnabry",
+                "Lewandowski",
+                "Coman",
+            ],
+        }, {
+            "name": "Borussia Dortmund",
+            "players": [
+                "Kobel",
+                "Meunier",
+                "Akanji",
+                "Hummels",
+                "Guerreiro",
+                "Witsel",
+                "Bellingham",
+                "Reus",
+                "Haaland",
+                "Malen",
+            ],
+        },],
+        "scored": ["Lewandowski", "Gnabry", "Reus"],
+        "odds": {
+            "team1": 1.6,
+            "draw": 3.5,
+            "team2": 5.5,
+        },
+        "scorers": {
+            "Gnarby": 1,
+            "Hummels": 1,
+            "Lewandowski": 2
+        }
+
+    }
+    players1 = game["teams"][0]['players']
+    players2 = game["teams"][1]['players']
+    players1[0] = 'gk'
+    players2[0] = 'gk'
+    allPlayers = [...players1, ...players2]
+    players1Final = ['Thiago', 'Coutinho', 'Perisic', ...players1]
+    var printGoals = (...NotArray) => {
+        console.log(NotArray.length);
+
+        NotArray.forEach((item, index) => {
+            console.log(`${item} +  số bàn thắng là:  + ${index + 1}`);
+        })
+
+    }
+    var team1 = game['odds']['team1']
+    var team2 = game['odds']['team2']
+    var draw = game['odds']['draw']
+    var teamdb = ['Davies', 'Muller', 'Lewandowski', 'Kimmich']
+    console.log(players1);
+    console.log(players2);
+    console.log(allPlayers);
+    console.log(players1Final);
+    console.log(team1);
+    console.log(team2);
+    console.log(draw);
+    console.log("use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.");
+    printGoals(...teamdb)
+    console.log("players from game.scored");
+    printGoals(...game.scored)
+
+    var value = 0
+    var arr = [team1, team2, draw]
+
+    var value = arr.filter((item, index) => {
+        return item === Math.min(team1, team2, draw)
+    })
+
+    console.log('The team with the lower odd is more likely to win ' + value);
+    console.log('Coding Challenge #2');
+
+    var arr = game['scored']
+
+    arr.map((item, index) => {
+        console.log(` Goal ${index + 1}: ${item}`);
+    })
+
+    var arr = [game['odds']['team1'], game['odds']['team2'], game['odds']['draw']]
+
+    var average = arr.reduce((cacl, init) => cacl + init, 0) / arr.length
+
+    console.log(average);
+
+    console.log(game['odds']);
+    var keyss = Object.keys(game['odds']);
+    var valuess = Object.values(game['odds']);
+    var odds = [{
+        odd: keyss[0],
+        value: valuess[0]
+    }, {
+        odd: keyss[1],
+        value: valuess[1]
+    }, {
+        odd: keyss[2],
+        value: valuess[2]
+    }]
+    odds.map((item, index) => {
+        if (item['odd'] === 'draw') {
+            console.log(`Odd of draw: ${item['value']} `)
+        } else {
+            console.log(`Odd  of ${item['odd']} Bayern Munich: ${item['value']} `);
+        }
+
+    })
+    console.log('-------------Coding Challenge #3==================================');
+    gameEvents = [{
+        "time": 17,
+        "type": "GOAL"
+    }, {
+        "time": 32,
+        "type": "YELLOW_CARD"
+    }, {
+        "time": 45,
+        "type": "SUBSTITUTION"
+    }, {
+        "time": 55,
+        "type": "FOUL"
+    }, {
+        "time": 70,
+        "type": "RED_CARD"
+    }, {
+        "time": 80,
+        "type": "GOAL"
+    },]
+    var arr = gameEvents.filter((item) => {
+        return item.name !== 'YELLOW_CARD'
+    })
+    console.log(arr);
+
+    var avgTime = 90 / gameEvents.length
+
+    console.log(avgTime);
+
+    var arr = gameEvents.map((item) => {
+        if (item.time < 45) {
+            console.log(`[FIRST HALF] ${item.time} :${item.type} `);
+        } else {
+            console.log(`[SECOND HALF] ${item.time} :${item.type} `);
+        }
+    })
+
+
+    var UpLowCase = (text) => {
+        return text.charAt(0).toUpperCase() + text.slice(1).toLocaleLowerCase()
+    }
+    var changeText = (text) => {
+        text_rp = text.replace('_', " ")
+        texts = text_rp.split(' ')
+        console.log(texts[0] + UpLowCase(texts[1]))
+
+    }
+    var texts = [
+        'underscore_case',
+        'first_name',
+        'Some_Variable',
+        'calculate_AGE',
+        'delayed_departure',
+    ]
+    texts.map((text) => {
+        changeText(text)
+    })
+
+    const poll = {
+        question: "What is your favourite programming language?",
+        options: ["JavaScript", "Python", "Rust", "C++"],
+        answers: [0, 0, 0, 0],
+    };
+
+    ///////////
+    var checkDogs = (dogsJulia, dogsKate) => {
+        const dogsJuliaCopy = dogsJulia.filter((dog) => {
+
+            return dog > 3
+        })
+        var allDog = dogsJuliaCopy.concat(dogsKate)
+        allDog.map((dog, index) => {
+            dog > 3 ?
+                // ("Dog number 1 is an adult, and is 5 years old") or a puppy ("Dog number 2 is still a puppy")
+                console.log(`Dog number ${index + 1} is an adult, and is ${dog} years old`) :
+
+                console.log(`Dog number ${index + 1}  is still a puppy`);
+        })
+
+    }
+
+    checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3])
+    checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4])
+
+    console.log('-------Coding Challenge #2==================================');
+
+    var calcAverageHumanAge = (dogsAge) => {
+        return dogsAge.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4)
+    }
+    var arrDogs = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+
+    var arrDogs = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+
+    console.log('-------Coding Challenge #3==================================');
+
+    var calcAverageHumanAge = (dogsAge) => {
+        return dogsAge.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4)
+    }
+    var arrDogs = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+
+    var arrDogs = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+    console.log('-------Coding Challenge #4==================================');
+    const dogs = [{
+        weight: 22,
+        curFood: 250,
+        owners: ["Alice", "Bob"]
+    }, {
+        weight: 8,
+        curFood: 200,
+        owners: ["Matilda"]
+    }, {
+        weight: 13,
+        curFood: 275,
+        owners: ["Sarah", "John"]
+    }, {
+        weight: 32,
+        curFood: 340,
+        owners: ["Michael"]
+    },];
+    // Calculate the recommended food portion for each dog
+
+    dogs.map((dog) => {
+        return dog.recommendedFood = dog.weight ** 0.75 * 28
+    })
+
+
+    dogs.map((dog) => {
+        dog.owners.forEach((owner) => {
+            owner === 'Sarah' ?
+                dog.recommendedFood < dog.curFood ? console.log(' its eating too much ') : console.log('or too little') :
+                '';
+        })
+    })
+    console.log('====================ownersEatTooMuch==================================');
+    var ownersEatTooMuch = (dogs) => {
+        var arrDogsowner = []
+        dogs.map((dog) => {
+            dog.owners.forEach((owner) => {
+                // console.log(owner);
+                dog.recommendedFood < dog.curFood ? arrDogsowner.push(owner) : '';
+            })
+        })
+        return arrDogsowner
+    }
+    console.log(ownersEatTooMuch(dogs).join(',') + ' eat too Much!');
+    console.log('===================ownersEatTooLittle==================================');
+    var ownersEatTooLittle = (dogs) => {
+        var arrDogsowner = []
+        dogs.map((dog) => {
+            dog.owners.forEach((owner) => {
+                // console.log(owner);
+                dog.recommendedFood > dog.curFood ? arrDogsowner.push(owner) : '';
+            })
+        })
+        return arrDogsowner
+    }
+    console.log(ownersEatTooLittle(dogs).join(',') + ' eat too Little!');
+
+    console.log(' Log to the console whether there is any dog eating exactly the amount of foodthat is recommended (just true or false)');
+    var dogcurrRecomm = dogs.forEach((dog) => dog.curFood === dog.recommendedFood ? console.log(true) : console.log(false))
+
+
+    console.log('Log to the console whether there is any dog eating an okay amount of food (just true or false)');
+
+    var dogcurrRecomm = dogs.forEach((dog) => dog.curFood >= dog.recommendedFood ? console.log(true) : console.log(false))
+
+    console.log(' Log to the console whether there is any dog eating exactly the amount of foodthat is recommended (just true or false)');
+
+
+    var dogcurrRecomm = dogs.forEach((dog) => dog.curFood <= dog.recommendedFood ? console.log(true) : console.log(false))
+
+
+    dogssort = dogs.sort((a, b) => {
+        return a.curFood - b.curFood
+    })
+    console.log(dogssort);
+
+    console.log('-------------------------------Object Oriented Programming (OOP)-------------------------------')
+    console.log('-------------------Coding Challenge #1-----------------------------')
+
+    class Car {
+        constructor(make, speed) {
+            this.make = make;
+            this.speed = speed
+        }
+
+        accelerate() {
+            this.speed += 10
+            console.log(this.speed);
+        }
+        brake() {
+            this.speed -= 5
+            console.log(this.speed);
+        }
+    }
+    console.log('-------------------BMW-----------------------------')
+    const BMW = new Car('BMW', 120)
+    BMW.accelerate();
+    BMW.accelerate();
+    BMW.accelerate();
+    BMW.accelerate();
+    BMW.brake();
+    BMW.brake();
+    BMW.brake();
+    BMW.brake();
+    console.log('-------------------Mercedes-----------------------------')
+    const Mercedes = new Car('Mercedes', 95)
+    Mercedes.accelerate();
+    Mercedes.accelerate();
+    Mercedes.accelerate();
+    Mercedes.accelerate();
+    Mercedes.brake();
+    Mercedes.brake();
+    Mercedes.brake();
+    Mercedes.brake();
+    console.log('===============================Coding Challenge #2=========================');
+    class CarCl {
+        constructor(make, speed) {
+            this.make = make;
+            this.speed = speed
+        }
+        get SpeedUS() {
+            return this.speed / 1.6;
+        }
+        set SpeedUS(speed) {
+            return this.speed = speed * 1.6
+        }
+        accelerate() {
+            return this.speed = this.speed + 10
+            // console.log(this.speed);
+        }
+        brake() {
+            return this.speed -= 5
+        }
+    }
+
+    const Ford = new CarCl('Ford', 120)
+    console.log(Ford.SpeedUS);
+    console.log(Ford.SpeedUS = 90);
+    console.log(Ford.SpeedUS = Ford.SpeedUS);
+    console.log(Ford.accelerate());
+    console.log(Ford.brake());
+
+    console.log('===============================Coding Challenge #3=========================');
+
+    class EV extends CarCl {
+        constructor(make, speed, batery) {
+            super(make, speed)
+            this.batery = batery
+        }
+        chargeBattery(chargeTo) {
+            this.batery = chargeTo
+        }
+        accelerate() {
+            this.speed += 20
+            this.batery -= 1
+        }
+
+    }
+
+    const tesla = new EV('Testla', 100, 90)
+    console.log(tesla);
+    tesla.chargeBattery(100)
+    console.log(tesla);
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    tesla.accelerate()
+    console.log(`${tesla.make} going at ${tesla.speed} km/h, with a charge of ${tesla.batery}%`);
+
+
+    console.log('===============================Coding Challenge #4=========================');
+    class EVCl extends CarCl {
+        constructor(make, speed, charge) {
+            super(make, speed)
+            this._charge = charge
+        }
+        get charge() {
+            return this._charge;
+        }
+
+        set charge(charge) {
+            this._charge = charge;
+        }
+        accelerate() {
+            this._charge -= 1
+            console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this._charge}%`);
+        }
+
+    }
+
+    const rivian = new EVCl('Rivian', 120, 23)
+    rivian.accelerate()
+    console.log('===============================ASYNCHRONOUS JAVASCRIPT=========================');
+    console.log('===============================Coding Challenge #1=========================');
+
+
+
+    var whereAmI = async (lat, lng) => {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+            .then(res => {
+                return res.json()
+            })
+            .then(data => console.log(`You are in ${data['city']}, ${data['country']}`))
+            .catch(error => console.log(error))
+
+        // console.log(callapi);
+        // return callapisx
+
+
+    }
+    var callWhere = async () => {
+        await whereAmI(52.508, 13.381)
+        await whereAmI(19.037, 72.873)
+        await whereAmI(-33.933, 18.474)
+    }
+    callWhere()
+
+
+    console.log('===============================Coding Challenge #2=========================');
+
+    const createImage = async (imgPath) => {
+        var img = document.createElement('img')
+        var imagess = document.querySelector('.images')
+        // img.style.display = 'none'
+        img.style.display = 'block'
+        img.src = imgPath
+        img.addEventListener('load', () => {
+            imagess.appendChild(img)
+            return img
+        })
+
+        await new Promise(resolve => setTimeout(resolve, 3000))
+        img.style.display = 'none'
+
+
+        img.addEventListener("error", () => {
+            throw new Error("Error loading image");
+        });
+    }
+
+    var image = createImage('data:image/jpeg;base64,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')
+    console.log('===============================Coding Challenge #3=========================');
+
+
+
+
+    const images = ['data:image/jpeg;base64,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',
+        'data:image/jpeg;base64,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',
+        'data:image/jpeg;base64,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'
+    ]
+    // var imgss = document.createElement('img')
+    // var imagesss = document.querySelector('.imagess')
+    // async function loadAll(imgArr) {
+    //     const imgs = await Promise.all(imgArr.map(createImage));
+    //     console.log(imgs); // [img1, img2, img3]
+    //     imgs.forEach(img => imagesss.append(imgss.src = img));
+    // }
+    const loadNimage = async () => {
+        await createImage(images[0])
+        await createImage(images[1])
+        await createImage(images[2])
+    }
+    loadNimage()
+</script>
+
+</html>
